@@ -12,7 +12,7 @@ var firebaseConfig = {
   let firestore = firebase.firestore();
 
   const btn = document.querySelector('.btn')
-  const firstNames = document.querySelector('#firstName')
+  let firstNames = document.querySelector('#firstName')
   const lastNames = document.querySelector('#lastName')
   const emails = document.querySelector('#email')
   const countrys = document.querySelector('#country')
@@ -21,12 +21,19 @@ var firebaseConfig = {
 
   btn.addEventListener('click', function(event){
       event.preventDefault()
-      const firstName = firstNames.value 
+     let firstName = firstNames.value 
       const  lastName = lastNames.value 
       const email = emails.value 
       const country = countrys.value
-      
-    db.doc().set({
+
+      firstNames.value = '';
+      lastNames.value = '';
+      email.value = '';
+   
+      if(firstName === '' || lastName === ''){
+        alert('input something')
+      }else{
+       db.doc().set({
         first_name: firstName,
         last_name: lastName,
         email:email,
@@ -36,6 +43,11 @@ var firebaseConfig = {
     }).catch(function(error){
         console.log(error)
     })
+
+    alert('think you form submiting')
+  }
+  
+
   })
 
 

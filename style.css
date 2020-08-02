@@ -1,6 +1,13 @@
+.form-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
 .forms{
-    width: 80%;
-    background-color: red;
+    width: 40%;
+    background: rgba(0, 0, 0, 0.411);
+   padding: 20px 30px;
+    
 }
 
 
