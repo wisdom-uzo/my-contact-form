@@ -10,6 +10,13 @@
     
 }
 
+@media screen and (max-width: 700px){
+    .forms{
+        width: 80%;
+        background-color: red;
+    }  
+}
+
 
 
 
